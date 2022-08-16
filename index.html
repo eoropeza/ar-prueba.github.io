@@ -1,19 +1,24 @@
 
-<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
-<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+<html>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <!-- we import arjs version without NFT but with marker + location based support -->
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 
-<body style='margin : 0px; overflow: hidden;'>
-    <a-scene arjs="debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;" embedded artoolkit='sourceType: webcam;'>
-        
-        <a-marker preset="hiro">
-            <a-entity>
-                <a-box position='0 0.5 0' color="#9bca3d" radius=".5" metalness=".5" material='opacity: 1;'></a-box>
-                <a-plane position="0 0 0" rotation="-90 0 0" width="1" height="1" color="#7BC8A4"></a-plane>
-                <a-sphere position="0 0.5 0" radius="0.5" color="#EF2D5E"></a-sphere>
-            </a-entity>
-        </a-marker>
-        <a-entity camera></a-entity>
+  <body style="margin : 0px; overflow: hidden;">
+    <a-scene embedded arjs>
+      <a-marker preset="hiro">
+        <a-entity
+          position="0 0 0"
+          scale="0.05 0.05 0.05"
+          gltf-model="manzana.gltf"
+        ></a-entity>
+      </a-marker>
+      <a-entity camera></a-entity>
     </a-scene>
 
-    <div class="a-enter-vr embedded" aframe-injected="" style="position: fixed;">version 4</div>
-</body>
+
+    <div class="a-enter-vr embedded" aframe-injected="" style="position: fixed;">version 7</div>
+  </body>
+</html>
+
+<!-- gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"  -->
