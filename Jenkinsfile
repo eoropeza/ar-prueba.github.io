@@ -8,7 +8,7 @@ pipeline {
                     def dockerfile = 'Dockerfile'
                     def customImage = docker.build("nginx-test",
                                        "-f ${dockerfile} .")
-                   customImage.run("-d -p 8090:80 nginx-test")
+                   customImage.run("-d -p 8090:80 --name nginx-test")
                 }
             }
         }
